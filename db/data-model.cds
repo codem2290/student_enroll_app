@@ -41,6 +41,11 @@ entity Trainers : cuid {
     expertise : String;
 }
 
+entity TrainerSkills {
+    key code : String;
+        desc : String;
+}
+
 entity Status {
     key code : String;
         desc : String;
