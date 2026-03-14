@@ -45,3 +45,8 @@ entity TrainerSkills {
     key code : String;
         desc : String;
 }
+
+entity Status {
+    key code : String;
+        desc : String;
+}
