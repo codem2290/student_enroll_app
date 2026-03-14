@@ -50,3 +50,7 @@ entity Status {
     key code : String;
         desc : String;
 }
+
+entity NewEntity {
+    key code : String;
+}
