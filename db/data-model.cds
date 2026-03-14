@@ -40,3 +40,8 @@ entity Trainers : cuid {
     name      : String;
     expertise : String;
 }
+
+entity Status {
+    key code : String;
+        desc : String;
+}
