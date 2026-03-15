@@ -1,0 +1,16 @@
+{
+    "CourseID": "0001",
+    "name": "SAP BTP CAPM",
+    "enrollments": [
+        {
+            //"CourseID": "0001",
+            "enrollID": "01",
+            "name": "Test1"
+        },
+        {
+            //"CourseID": "0001",
+            "enrollID": "02",
+            "name": "Test1"
+        }
+    ]
+}

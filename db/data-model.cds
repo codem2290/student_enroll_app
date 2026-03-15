@@ -16,23 +16,26 @@ entity Students : cuid {
     qualification : String;
     dateOfBirth   : Date;
     age           : Integer;
+    image         : LargeBinary @Core.MediaType: 'image/png';
 }
 
 entity Courses : cuid, managed {
     //courseId        : UUID;
-    name            : String;
-    duration        : Integer;
-    fees            : amountType;
-    trainerName     : String;
-    trainerSkillset : String;
+    name        : String;
+    duration    : Integer;
+    fees        : amountType;
+    trainer     : Association to Trainers;
+    enrollments : Composition of many Enrollments
+                      on enrollments.course = $self;
 }
 
 entity Enrollments : cuid, managed {
     //enrollId     : UUID;
     feesPaid     : amountType;
     enrolledDate : Date;
-    studentName  : String;
-    status       : String;
+    student      : Association to Students;
+    status       : Association to Status;
+    course       : Association to Courses; // Managed Association
 }
 
 entity Trainers : cuid {
@@ -41,16 +44,7 @@ entity Trainers : cuid {
     expertise : String;
 }
 
-entity TrainerSkills {
-    key code : String;
-        desc : String;
-}
-
 entity Status {
     key code : String;
         desc : String;
-}
-
-entity NewEntity {
-    key code : String;
 }

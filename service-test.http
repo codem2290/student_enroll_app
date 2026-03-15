@@ -1,0 +1,48 @@
+### Reading data for courses
+GET http://localhost:4004/odata/v4/student-enrollment-api/Courses
+
+
+### Create New Course Data
+POST http://localhost:4004/odata/v4/student-enrollment-api/Courses
+Content-Type: application/json
+
+{
+    "name"        : "SAP BTP CAPM",
+    "duration"    : 50,
+    "fees"        : 15000.00,
+    "trainer_ID"     : "4966d9c5-8c1a-4cad-9f74-70c30b93f557"
+}
+
+### Update Course Data
+PATCH http://localhost:4004/odata/v4/student-enrollment-api/Courses('4a8dca9a-94b3-41cb-8842-913e1cb5a351')
+Content-Type: application/json
+
+{
+    "name"        : "SAP BTP CAPM/SAPUI5"
+}
+
+
+### Deep Create 
+POST http://localhost:4004/odata/v4/student-enrollment-api/Courses
+Content-Type: application/json
+
+{    
+  "name": "SAP BTP CAPM/SAPUI5",
+  "duration": 50,
+  "fees": 15000,
+  "trainer_ID": "4966d9c5-8c1a-4cad-9f74-70c30b93f557",
+  "enrollments": [
+    {
+        "feesPaid"     : 15000,
+        "enrolledDate" : "2026-03-15",
+        "student_ID"      : "0eab2564-ffc4-4348-b76c-56be667a541a",
+        "status_code"       : "01"
+    },
+    {
+        "feesPaid"     : 5000,
+        "enrolledDate" : "2026-03-15",
+        "student_ID"      : "c6fbaa58-e62f-4582-89cb-64a8258f749c",
+        "status_code"       : "02"
+    }
+  ]
+}
