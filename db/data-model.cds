@@ -21,12 +21,13 @@ entity Students : cuid {
 
 entity Courses : cuid, managed {
     //courseId        : UUID;
-    name        : String;
-    duration    : Integer;
-    fees        : amountType;
-    trainer     : Association to Trainers;
-    enrollments : Composition of many Enrollments
-                      on enrollments.course = $self;
+    name         : String;
+    duration     : Integer;
+    fees         : amountType;
+    trainer      : Association to Trainers;
+    enrollments  : Composition of many Enrollments
+                       on enrollments.course = $self;
+    courseStatus : String;
 }
 
 entity Enrollments : cuid, managed {
@@ -48,3 +49,4 @@ entity Status {
     key code : String;
         desc : String;
 }
+
