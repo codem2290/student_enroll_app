@@ -2,8 +2,10 @@ const cds = require('@sap/cds');
 const { UPDATE } = require('@sap/cds/lib/ql/cds-ql');
 
 class StudentEnrollmentAPI extends cds.ApplicationService {
-    init() {
-        const { Courses } = this.entities;
+    async init() {
+        const { Courses, SalseorderSet } = this.entities;
+        const s4hanasystem = await cds.connect.to('SalesOrderService');
+
         this.on('activateCourse', async (req) => {
             try {
                 const courseID = req.data.courseID;
@@ -44,6 +46,10 @@ class StudentEnrollmentAPI extends cds.ApplicationService {
                 return response;
             }
 
+        });
+
+        this.on('READ', SalseorderSet, async (req) => {
+            return await s4hanasystem.run(req.query);
         });
 
         return super.init();

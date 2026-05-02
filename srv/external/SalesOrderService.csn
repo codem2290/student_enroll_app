@@ -1,0 +1,93 @@
+{
+ "meta": {
+  "creator": "cds-dk 9.8.2"
+ },
+ "$version": "2.0",
+ "definitions": {
+  "SalesOrderService": {
+   "kind": "service",
+   "@cds.external": true,
+   "@m.IsDefaultEntityContainer": "true",
+   "@sap.supported.formats": "atom json xlsx"
+  },
+  "SalesOrderService.SalseorderSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.pageable": "false",
+   "@sap.content.version": "1",
+   "elements": {
+    "Vbeln": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.unicode": "false",
+     "@sap.label": "Sales Document",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Auart": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.unicode": "false",
+     "@sap.label": "Sales Doc. Type",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Erdat": {
+     "type": "cds.Timestamp",
+     "@odata.Type": "Edm.DateTime",
+     "@odata.Precision": 7,
+     "@sap.unicode": "false",
+     "@sap.label": "Created On",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Erzet": {
+     "type": "cds.Time",
+     "@sap.unicode": "false",
+     "@sap.label": "Time",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Ernam": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "Created By",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Vbtyp": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.unicode": "false",
+     "@sap.label": "Document Cat.",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    }
+   }
+  }
+ }
+}

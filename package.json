@@ -5,7 +5,10 @@
   "dependencies": {
     "@cap-js/hana": "^2",
     "@sap/cds": "^9",
-    "express": "^4"
+    "express": "^4",
+    "@sap-cloud-sdk/connectivity": "^4",
+    "@sap-cloud-sdk/http-client": "^4",
+    "@sap-cloud-sdk/resilience": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2",
@@ -25,6 +28,14 @@
       "[production]": {
         "db": {
           "kind": "hana"
+        }
+      },
+      "SalesOrderService": {
+        "kind": "odata-v2",
+        "model": "srv/external/SalesOrderService",
+        "credentials": {
+          "path": "/sap/opu/odata/SAP/ZSALSEORDER_DTL_SRV/",
+          "destination": "s4hana"
         }
       }
     }
