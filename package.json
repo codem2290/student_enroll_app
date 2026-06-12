@@ -8,7 +8,8 @@
     "express": "^4",
     "@sap-cloud-sdk/connectivity": "^4",
     "@sap-cloud-sdk/http-client": "^4",
-    "@sap-cloud-sdk/resilience": "^4"
+    "@sap-cloud-sdk/resilience": "^4",
+    "@sap/xssec": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2",
@@ -25,9 +26,28 @@
       "db": {
         "kind": "hana"
       },
+      "auth": {
+        "users": {
+          "admin": {
+            "password": "admin",
+            "roles": [
+              "admin"
+            ]
+          },
+          "employee": {
+            "password": "employee",
+            "roles": [
+              "employee"
+            ]
+          }
+        }
+      },
       "[production]": {
         "db": {
           "kind": "hana"
+        },
+        "auth": {
+          "kind": "xsuaa"
         }
       },
       "SalesOrderService": {
@@ -37,7 +57,10 @@
           "path": "/sap/opu/odata/SAP/ZSALSEORDER_DTL_SRV/",
           "destination": "s4hana"
         }
-      }
+      },
+      "destinations": true,
+      "html5-repo": true,
+      "workzone": true
     }
   },
   "workspaces": [

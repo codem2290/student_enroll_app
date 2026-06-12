@@ -17,11 +17,24 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/odata/v4/student-enrollment-api/",
+        "uri": "odata/v4/student-enrollment-api/",
         "type": "OData",
         "settings": {
           "annotations": [],
-          "odataVersion": "4.01"
+          "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "student_app_enroll-display": {
+          "semanticObject": "student_app_enroll",
+          "action": "display",
+          "title": "Student Enrollment App",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
         }
       }
     }
@@ -158,5 +171,9 @@
     "app": {
       "enableLazyLoading": true
     }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "student_enroll_app.service"
   }
 }

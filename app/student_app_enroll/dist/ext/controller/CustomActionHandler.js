@@ -1,0 +1,2 @@
+sap.ui.define(["sap/m/MessageToast"],function(e){"use strict";return{activateCourseStatus:function(e,t){let i="activateCourse";let o={model:this.getModel(),parameterValues:[{name:"courseID",value:e.getObject().ID}],skipParameterDialog:true};this.editFlow.invokeAction(i,o).then(function(e){this._controller.getExtensionAPI().refresh()}.bind(this)).catch(function(e){console.error(e)})}}});
+//# sourceMappingURL=CustomActionHandler.js.map
