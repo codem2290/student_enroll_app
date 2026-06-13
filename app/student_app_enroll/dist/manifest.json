@@ -22,7 +22,7 @@
 		},
 		"dataSources": {
 			"mainService": {
-				"uri": "odata/v4/student-enrollment-api/",
+				"uri": "/odata/v4/student-enrollment-api/",
 				"type": "OData",
 				"settings": {
 					"annotations": [],

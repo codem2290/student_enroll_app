@@ -14,11 +14,16 @@
   "devDependencies": {
     "@cap-js/sqlite": "^2",
     "@sap/cds-dk": "^9",
-    "cds-plugin-ui5": "^0.13.0"
+    "cds-plugin-ui5": "^0.13.0",
+    "rimraf": "^5.0.5",
+    "mbt": "^1.2.49"
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-student_app_enroll": "cds watch --open com.student.app.studentappenroll/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-student_app_enroll": "cds watch --open com.student.app.studentappenroll/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "undeploy": "cf undeploy student_enroll_app --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
   },
   "private": true,
   "cds": {
