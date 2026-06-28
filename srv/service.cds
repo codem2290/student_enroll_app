@@ -35,4 +35,6 @@ service StudentEnrollmentAPI {
     action   activateCourse(courseID: String) returns String; //Unbound Action
     function ReadCourseDataProcedure()        returns String;
 
+    entity Managers as projection on datamodel.Managers;
+
 }
